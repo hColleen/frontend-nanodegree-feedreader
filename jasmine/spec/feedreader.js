@@ -69,6 +69,20 @@ $(function() {
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
+		  var spyEvent,
+		  menuButton = $(".menu-icon-link"),
+		  spyOnEvent = jasmine.createSpy("spyOnEvent");
+		  it('should display when clicked', function(){
+			  spyEvent = spyOnEvent(menuButton, "click");
+			  menuButton.trigger("click");
+			  expect(body.attr('class')).not.toBe("menu-hidden");
+		  });
+		  
+		  it("should hide when clicked again", function(){
+			  menuButton.trigger("click");
+			  expect(body.attr('class')).toBe("menu-hidden");
+		  });
+		  
 	});
 
     /* TODO: Write a new test suite named "Initial Entries" */
