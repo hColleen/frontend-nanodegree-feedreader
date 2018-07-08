@@ -34,7 +34,7 @@ $(function() {
 		it('has URL', function(){
 			for(var i = 0; i < allFeeds.length; i++){
 				expect(allFeeds[i].url).toBeDefined();
-				expect(allFeeds[i].url).not.toBe('');
+				expect(allFeeds[i].url).not.toBeNull();
 			};
 		});
 
@@ -59,6 +59,10 @@ $(function() {
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
+		 var body = $('body');
+		 it('should be hidden', function(){
+			expect(body.attr('class')).toEqual('menu-hidden');
+		 });
 
          /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
