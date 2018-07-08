@@ -51,7 +51,7 @@ $(function() {
     });
 
 
-    /* TODO: Write a new test suite named "The menu" */
+    /* TODO: Write a new test suite named 'The menu' */
 	describe('The menu', function(){
 
         /* TODO: Write a test that ensures the menu element is
@@ -69,24 +69,21 @@ $(function() {
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
-		  var spyEvent,
-		  menuButton = $(".menu-icon-link"),
-		  spyOnEvent = jasmine.createSpy("spyOnEvent");
+		  var menuButton = $('.menu-icon-link');
 		  it('should display when clicked', function(){
-			  spyEvent = spyOnEvent(menuButton, "click");
-			  menuButton.trigger("click");
-			  expect(body.attr('class')).not.toBe("menu-hidden");
+			  menuButton.trigger('click');
+			  expect(body.attr('class')).not.toBe('menu-hidden');
 		  });
 		  
-		  it("should hide when clicked again", function(){
-			  menuButton.trigger("click");
-			  expect(body.attr('class')).toBe("menu-hidden");
+		  it('should hide when clicked again', function(){
+			  menuButton.trigger('click');
+			  expect(body.attr('class')).toBe('menu-hidden');
 		  });
 		  
 	});
 
-    /* TODO: Write a new test suite named "Initial Entries" */
-	describe("Initial Entries", function(){
+    /* TODO: Write a new test suite named 'Initial Entries' */
+	describe('Initial Entries', function(){
 
         /* TODO: Write a test that ensures when the loadFeed
          * function is called and completes its work, there is at least
@@ -95,7 +92,7 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
 
-    /* TODO: Write a new test suite named "New Feed Selection" */
+    /* TODO: Write a new test suite named 'New Feed Selection' */
 
         /* TODO: Write a test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
