@@ -91,14 +91,22 @@ $(function() {
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
+		 var feedIndex = 0;
+		 var artTitle = $(".header-title");
+		 
 		 beforeEach(function(done){
-			 setTimeout(function(){
-				 
+			 loadFeed(feedIndex, function(){
 				 done();
-			 }, 100);
+			 });
 		 });
 		 
-		 
+		 it("should display at least one entry", function(done){
+			 var article = $(".feed").find(".entry");
+			 expect(article).toBeDefined();
+			 expect(article.length).toBeGreaterThan(0);
+			 expect(artTitle.text()).toEqual(allFeeds[feedIndex].name);
+			 done();
+		})
 	});
 
     /* TODO: Write a new test suite named 'New Feed Selection' */
